@@ -1,13 +1,15 @@
 package CSC8023;
 
+import java.text.DecimalFormat;
+
 public class Book {
 
     private String bookStoreName;
     private String bookId;
     private String bookTitle;
     private Long publishedYear;
-    private Float value;
-
+    private Double value;
+    DecimalFormat df = new DecimalFormat("0.00");
 
     public String getBookStoreName() {
         return bookStoreName;
@@ -41,16 +43,16 @@ public class Book {
         this.publishedYear = publishedYear;
     }
 
-    public Float getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Float value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
     @Override
     public String toString() {
-        return "Book Id: "+bookId+", Title: "+bookTitle+", Year published: "+publishedYear+", Value: "+value;
+        return "Book Id: "+bookId+", Title: "+bookTitle+", Year published: "+publishedYear+", Value: "+df.format(value);
     }
 }
